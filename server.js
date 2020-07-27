@@ -41,7 +41,7 @@ app.get("/question/:id", function (req, res) {
 
 });
 
-app.listen(PORT, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log("Server running on Port: " + PORT);
 })
 
