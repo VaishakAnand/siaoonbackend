@@ -1,0 +1,305 @@
+
+const qns = [
+    {
+        question: "What is the time complexity of insertion in a linked list?",
+        options: {
+            optionA: "O(1)",
+            optionB: "O(n)",
+            optionC: "O(n^2)",
+            optionD: "O(log n)"
+        },
+        correct_answer: "O(1)",
+        topic: "linked-list",
+        explanation: "To insert a node into a linked list, you will only need the address of the node that you are attaching it to. \
+    For example, if you are attaching the node to the end of the list, you only need the address stored in the next pointer of the last node in the list. \
+    Referencing that pointer is a single operation."
+    },
+
+    {
+        question: "In physical memory, the nodes in a linked list may be scattered around.",
+        options: {
+            optionA: "True",
+            optionB: "False",
+            optionC: "",
+            optionD: ""
+        },
+        correct_answer: "True",
+        topic: "linked-list",
+        explanation: "A linked list is a linear collection of data elements, whose order is not given by their physical placement in memory."
+    },
+
+    {
+        question: "When the head pointer points to NULL, it does not signify an empty list.",
+        options: {
+            optionA: "True",
+            optionB: "False",
+            optionC: "",
+            optionD: ""
+        },
+        correct_answer: "False",
+        topic: "linked-list",
+        explanation: "If the head pointer is pointing to NULL, it means that it isn't pointing to anything (i.e. not pointing to any address). This means that it cannot even point to a node which shows the absence of a list."
+    },
+
+    {
+        question: "What is the time complexity of searching in a linked list?",
+        options: {
+            optionA: "O(1)",
+            optionB: "O(n)",
+            optionC: "O(n^2)",
+            optionD: "O(log n)"
+        },
+        correct_answer: "O(n)",
+        topic: "linked-list",
+        explanation: "To search a linked list of n nodes, you will have to go through n nodes per unit of time meaning that the time complexity is O(n*1) = O(n)."
+    },
+
+    {
+        question: "Which of the following operations is performed more efficiently by doubly linked list than by singly linked list?",
+        options: {
+            optionA: "Deleting a node whose location in given",
+            optionB: "Searching of an unsorted list for a given item",
+            optionC: "Inverting a node after the node with given location",
+            optionD: "Traversing a list to process each node"
+        },
+        correct_answer: "Deleting a node whose location in given",
+        topic: "linked-list",
+        explanation: "Time complexity of deletion in a doubly linked list is O(1) compared to O(n) for singly linked list.\
+    In order to delete a node and connect the previous and the next node together, you need to know their pointers. \
+    In a doubly- linked list, both pointers are available in the node that is to be deleted.The time complexity is constant in this case, i.e., O(1). \
+    Whereas in a singly - linked list, the pointer to the previous node is unknown and can be found only by traversing the list from head until \
+    it reaches the node that has a next node pointer to the node that is to be deleted.The time complexity in this case is O(n)."
+    },
+    {
+        question: "What are the worst case and average case complexities of a binary search tree?",
+        options: {
+            optionA: "O(n), O(n)",
+            optionB: "O(logn), O(n)",
+            optionC: "O(logn), O(logn)",
+            optionD: "O(n), O(logn)"
+        },
+        correct_answer: "O(n), O(logn)",
+        topic: "binary-search-tree",
+        explanation: "Worst case arises when the tree is skewed(either to the left or right) in which case you have to process all the nodes of the tree giving O(n) complexity, \
+    otherwise O(logn) as you process only the left half or the right half of the tree."
+    },
+
+    {
+        question: "The following numbers are inserted into an empty binary search tree in the given order: 10, 1, 3, 5, 15, 12, 16. \
+What is the height of the binary search tree (the height is the maximum distance of a leaf node from the root)? ",
+        options: {
+            optionA: "2",
+            optionB: "3",
+            optionC: "4",
+            optionD: "6"
+        },
+        correct_answer: "O(n), O(logn)",
+        topic: "binary-search-tree",
+        explanation: "Constructed binary search tree will be \
+        5 -- 3 --- 1 --- 10 (ROOT) --- 15 ---12 --- 16"
+        //     10 
+        //   /     \ 
+        //  1       15 
+        // \      /  \ 
+        // 3    12   16
+        // \
+        // 5
+
+
+    },
+
+    {
+        question: "Consider the node of a complete binary tree whose value is stored in data[i] for an array implementation.  If this node has a right child,\
+    where will the right child's value be stored",
+        options: {
+            optionA: "data[2*i + 2]",
+            optionB: "data[2*i + 1]",
+            optionC: "data[i+2]",
+            optionD: "data[i+1]"
+        },
+        correct_answer: "O(n), O(logn)",
+        topic: "binary-search-tree",
+        explanation: "If the root of a tree has index 1, then the index of its left child is 2 and index of its right child is 3 (assign by convention)"
+    },
+
+    {
+        question: "Height of a binary tree is",
+        options: {
+            optionA: "MAX( Height of left Subtree, Height of right subtree)+1",
+            optionB: "MAX( Height of left Subtree, Height of right subtree)",
+            optionC: "MAX( Height of left Subtree, Height of right subtree)-1",
+            optionD: "None"
+        },
+        correct_answer: "MAX( Height of left Subtree, Height of right subtree)+1",
+        topic: "binary-search-tree",
+        explanation: "The height of a binary tree is the largest number of edges in a path from the root node to a leaf node. \
+    We add 1 to final result if the current node being traversed is a valid leaf node on the path."
+    },
+
+    {
+        question: "What is the maximum number of nodes in a binary tree with L leaves?",
+        options: {
+            optionA: "2L",
+            optionB: "2^L",
+            optionC: "2^(L+1)",
+            optionD: "there is no maximum"
+        },
+        correct_answer: "there is no maximum",
+        topic: "binary-search-tree",
+        explanation: "It depends on the value of L."
+    },
+
+    {
+        question: " Which of the following is true?",
+        options: {
+            optionA: "Prim’s algorithm initialises with a vertex",
+            optionB: "Prim’s algorithm initialises with a edge",
+            optionC: "Prim’s algorithm initialises with a vertex which has smallest edge",
+            optionD: "Prim’s algorithm initialises with a forest"
+        },
+        correct_answer: "Prim’s algorithm initialises with a vertex",
+        topic: "prims",
+        explanation: " Steps in Prim’s algorithm: \
+    I) Select any vertex of given graph and add it to MST \
+    (II) Add the edge of minimum weight from a vertex not in MST to the vertex in MST; \
+    (III) It MST is complete the stop, otherwise go to step (II)."
+    },
+    {
+        question: "Worst case is the worst case time complexity of Prim’s algorithm if adjacency matrix is used?",
+        options: {
+            optionA: "O(log V)",
+            optionB: "O(V^2)",
+            optionC: "O(E^2)",
+            optionD: "O(V log E)"
+        },
+        correct_answer: "O(V^2)",
+        topic: "prims",
+        explanation: "Use of adjacency matrix provides the simple implementation of the Prim’s algorithm. \
+    In Prim’s algorithm, we need to search for the edge with a minimum for that vertex. \
+    So, worst case time complexity will be O(V2), where V is the number of vertices." 
+    },
+    {
+        question: "Minimum number of spanning tree in a connected graph is",
+        options: {
+            optionA: "n",
+            optionB: "n(n-1)",
+            optionC: "1",
+            optionD: "0"
+        },
+        correct_answer: "1",
+        topic: "prims",
+        explanation: "A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, \
+    edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight. \
+    Each connected graph must have at least one MST."
+    },
+    {
+        question: "State True or False. \
+i) An undirected graph which contains no cycles is called forest. \
+ii) A graph is said to be complete if there is an edge between every pair of vertices.",
+        options: {
+            optionA: "True, True",
+            optionB: "False, True",
+            optionC: "False, False",
+            optionD: "True, False"
+        },
+        correct_answer: "True, True",
+        topic: "prims",
+        explanation: "A forest is an undirected graph in which any two vertices are connected by at most one path. \
+    Equivalently, a forest is an undirected acyclic graph.\
+    A complete graph is a simple undirected graph in which every pair of distinct vertices is connected by a unique edge"
+    },
+    {
+        question: "Let A be an adjacency matrix of a graph G. The ij th entry in the matrix Ak , gives",
+        options: {
+            optionA: "The number of paths of length K from vertex Vi to vertex Vj.",
+            optionB: "Shortest path of K edges from vertex Vi to vertex Vj.",
+            optionC: "Length of a Eulerian path from vertex Vi to vertex Vj.",
+            optionD: "Length of a Hamiltonian cycle from vertex Vi to vertex Vj."
+        },
+        correct_answer: "Shortest path of K edges from vertex Vi to vertex Vj.",
+        topic: "prims",
+        explanation: "A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected, \
+    edge-weighted undirected graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight. \
+    Each connected graph must have at least one MST."
+    },
+    {
+        question: "What is the search complexity in linear probing?",
+        options: {
+            optionA: "O(n)",
+            optionB: "O(logn)",
+            optionC: "O(nlogn)",
+            optionD: "O(1)"
+        },
+        correct_answer: "O(1)",
+        topic: "hash-tables",
+        explanation: "Since every key has a unique array position, searching takes a constant time."
+    },
+
+    {
+        question: "Which of the following is not a technique to avoid a collision?",
+        options: {
+            optionA: "Make the hash function appear random",
+            optionB: "Use the chaining method",
+            optionC: "Use uniform hashing",
+            optionD: "Increasing hash table size"
+        },
+        correct_answer: "Increasing hash table size",
+        topic: "hash-tables",
+        explanation: " On increasing hash table size, space complexity will increase as we need to reallocate the memory size of hash table for every collision. \
+    It is not the best technique to avoid a collision. We can avoid collision by making hash function random, chaining method and uniform hashing."
+    },
+
+    {
+        question: "In a hash table of size 10, where is element 7 placed?",
+        options: {
+            optionA: "6",
+            optionB: "7",
+            optionC: "17",
+            optionD: "16"
+        },
+        correct_answer: "7",
+        topic: "hash-tables",
+        explanation: "The hash location is defined as hash(f)= key mod table_size. \
+7 mod 10 gives 7. It is placed in 7th position."
+    },
+
+    {
+        question: "What is the worst case search time of a hashing using separate chaining algorithm?",
+        options: {
+            optionA: "O(N log N)",
+            optionB: "O(N)",
+            optionC: "O(N^2)",
+            optionD: "O(N^3)"
+        },
+        correct_answer: "O(N)",
+        topic: "hash-tables",
+        explanation: "The worst case search time of separate chaining algorithm using linked lists is mathematically found to be O(N)."
+    },
+
+    {
+        question: "Which of the following statement(s) is TRUE ? \
+A hash function takes a message of arbitrary length and generates a fixed length code. \
+A hash function takes a message of fixed length and generates a code of variable length. \
+A hash function may give the same hash value for distinct messages.",
+        options: {
+            optionA: " I only",
+            optionB: "II and III only",
+            optionC: "I and III only",
+            optionD: "II only"
+        },
+        correct_answer: "I and III only",
+        topic: "hash-tables",
+        explanation: "Hash function is defined as any function that can be used to map data of arbitrary size of data to a fixed size data. \
+    The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. \
+    Statement 1 is correct, it is possible that a hash function maps a value to a same location in the memmory. \
+    That explains why collision occurs and we have different technique to handle  this problem \
+    Statement 3 is coorect. eg : we have hash function, h(x) = x mod 3 \
+    According to Statement 1, no matter what the value of ‘x’ is h(x) results in a fixed mapping location. \
+    According to Statement 3, h(x) can result in same mapping mapping location for different value of ‘x’ e.g. if x = 4 or x = 7,  \
+    h(x) = 1 in both the cases, although collision occurs."
+    }
+
+
+]
+
+// 20 Questions
